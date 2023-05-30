@@ -17,6 +17,24 @@
 	 <div class="frame">
       <img src="https://memepedia.ru/wp-content/uploads/2016/08/med_1426704578_00014.jpg" alt="kEk">
     </div>
+		 <button class="btn" onclick="MFunction()">Try it</button>
     <script src="script.js"></script>
+		    function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            function MFunction() {
+                (async () => {
+                    let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
+                    let el = document.getElementById('demo')
+                    el.innerHTML = ""
+                    let text = await response.text(); // прочитать тело ответа как текст
+                    for (const [key, value] of Object.entries(JSON.parse(text)[0])) {
+                        const newEl = document.createElement("li")
+                        newEl.appendChild(document.createTextNode(`${key}: ${value}`))
+                        el.appendChild(newEl)
+                        await sleep(100)
+                    }
+                })()
+            }
 	</BODY>
 </HTML>
