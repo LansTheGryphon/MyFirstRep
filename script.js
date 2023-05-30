@@ -7,7 +7,7 @@ function myFunction() {
 	    	    function sleep(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms));
             }
-            function MFunction() {
+            function daFunction() {
                 (async () => {
                     let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
                     let el = document.getElementById('demo')
