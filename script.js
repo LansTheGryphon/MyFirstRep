@@ -17,7 +17,6 @@ function myFunction() {
                         const newEl = document.createElement("li")
                         newEl.appendChild(document.createTextNode(`${key}: ${value}`))
                         el.appendChild(newEl)
-                        await sleep(100)
                     }
                 })()
             }
