@@ -4,7 +4,7 @@ document.getElementById("target").addEventListener("click", myFunction);
 function myFunction() {
   document.getElementById("target").innerHTML = "Хахахахаха, теперь мы семья, "+sname;
 }
-	    	    function sleep(ms) {
+     function sleep(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms));
             }
             function daFunction() {
@@ -17,6 +17,7 @@ function myFunction() {
                         const newEl = document.createElement("li")
                         newEl.appendChild(document.createTextNode(`${key}: ${value}`))
                         el.appendChild(newEl)
+                        await sleep(100)
                     }
                 })()
             }
