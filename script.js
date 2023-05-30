@@ -8,7 +8,6 @@ function myFunction() {
                 return new Promise(resolve => setTimeout(resolve, ms));
             }
             function daFunction() {
-		    while (true){
                 (async () => {
                     let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
                     let el = document.getElementById('demo')
@@ -18,6 +17,6 @@ function myFunction() {
                         const newEl = document.createElement("li")
                         newEl.appendChild(document.createTextNode(`${key}: ${value}`))
                         el.appendChild(newEl)
-                    }}
+                    }
                 })()
             }
