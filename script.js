@@ -1,7 +1,7 @@
 let sname = prompt("Введи свою фамилию")
-document.getElementById("target").addEventListener("click", myFunction);
+document.getElementById("target").addEventListener("click", deFunction);
 
-function myFunction() {
+function deFunction() {
   document.getElementById("target").innerHTML = "Хахахахаха, теперь мы семья,"+sname;
 }
   function sleep(ms) {
