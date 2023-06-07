@@ -9,6 +9,7 @@ function myFunction() {
             }
             function daFunction() {
                 (async () => {
+                  while(true){
                     let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
                     let el = document.getElementById('demo')
                     el.innerHTML = ""
@@ -18,6 +19,6 @@ function myFunction() {
                         newEl.appendChild(document.createTextNode(`${key}: ${value}`))
                         el.appendChild(newEl)
                         await sleep(100)
-                    }
+                    }}
                 })()
             }
